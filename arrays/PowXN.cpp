@@ -23,7 +23,7 @@ double power(double x, int n)
     }
     else
     {
-        int z = n; // because double has decimal values so divide by 2 issue in future
+        int z = n; // because if n is double or float so it has decimal values so divide by 2 issue in future
         if (n < 0)
         {
             x = 1 / x;
@@ -31,16 +31,12 @@ double power(double x, int n)
         }
         while (z > 0)
         {
-            if (z % 2 != 0)
+            if (z % 2 == 1)
             {
-                ans = ans * x;
-                z--;
+                ans *= x;
             }
-            else
-            {
-                x = x * x;
-                z = z / 2;
-            }
+            x *= x;
+            z /= 2;
         }
     }
     return ans;
