@@ -101,5 +101,24 @@ int main()
     reverse(s8.begin(), s8.end()); // these begin and end returns the iterators
     cout << "Reversed string : " << s8 << endl;
 
+
+    // string is palidrome or not
+    string s9 = "nitin";
+
+    int start = 0 ,ending = s9.length()-1;
+    bool ans = true;
+    while (start < ending)
+    {
+        if(s9[start] != s9 [ending]){
+            ans = false;
+            break;
+        }
+        start++;
+        ending--;
+    }
+
+    cout << (ans ? "Valid Palidrome" : "Not a valid palidrome")<<endl;
+    
+
     return 0;
 }
